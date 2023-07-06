@@ -21,6 +21,7 @@ function getCheckReleaseArguments(): string[] {
         optionFromList("--package", rustCore.input.getInputList("package")),
         optionFromList("--exclude", rustCore.input.getInputList("exclude")),
         optionIfValueProvided("--manifest-path", rustCore.input.getInput("manifest-path")),
+        optionIfValueProvided("--baseline-root", rustCore.input.getInput("baseline-root")),
         optionIfValueProvided("--release-type", rustCore.input.getInput("release-type")),
         getFeatureGroup(rustCore.input.getInput("feature-group")),
         optionFromList("--features", rustCore.input.getInputList("features")),

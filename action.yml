@@ -13,6 +13,9 @@ inputs:
   manifest-path:
     description: 'Path to Cargo.toml of crate or workspace to check. If not specified, the action assumes the manifest is under the default `GITHUB_WORKSPACE` path.'
     required: false
+  baseline-root:
+    description: 'Path to a directory containing baseline crate source. If not specified, the crate latest version is pulled from the registry and used as the baseline.'
+    required: false
   feature-group:
     description: 'Override the feature group used for semver-checking, for example if you only want to check with default features.'
     required: false

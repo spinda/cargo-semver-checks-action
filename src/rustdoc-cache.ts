@@ -76,6 +76,7 @@ export class RustdocCache {
         hasher.update(JSON.stringify({ package: rustCore.input.getInputList("package").sort() }));
         hasher.update(JSON.stringify({ exclude: rustCore.input.getInputList("exclude").sort() }));
         hasher.update(JSON.stringify({ manifest_path: rustCore.input.getInput("manifest-path") }));
+        hasher.update(JSON.stringify({ baseline_root: rustCore.input.getInput("baseline-root") }));
 
         return [process.env["GITHUB_JOB"] || "", hasher.digest("hex").substring(0, 16)].join("-");
     }
